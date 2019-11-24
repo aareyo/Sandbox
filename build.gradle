@@ -20,10 +20,7 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-websocket', version: '4.1.6.RELEASE'
 	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.1.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '1.0.0.RELEASE'
-    compile group: 'org.postgresql', name: 'postgresql', version: '9.4-1201-jdbc41'
-
-
-
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
 
 
 }
