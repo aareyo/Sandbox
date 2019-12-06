@@ -1,23 +1,33 @@
 package com.sandbox.sandbox.model;
 
-public class Employee {
-    private int id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @NotNull
+    @Column(name = "firstname")
     private String firstName;
+
+    @NotNull
+    @Column(name = "lastname")
     private String lastName;
-    private String address;
 
-    public Employee() {
-        super();
-    }
+    @NotNull
+    @Column(name = "title")
+    private String title;
 
-    public Employee(int id, String firstName, String lastName, String address) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -29,11 +39,11 @@ public class Employee {
         return lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getTitle() {
+        return this.title;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -45,7 +55,7 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
