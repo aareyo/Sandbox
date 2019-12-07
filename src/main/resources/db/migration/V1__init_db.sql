@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS employee;
+
 CREATE TABLE employee (
   id bigint(20) AUTO_INCREMENT PRIMARY KEY,
   firstname varchar(255) DEFAULT NULL,

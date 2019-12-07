@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/Employee")
 public class EmployeeController {
-    
+
     // http://localhost:8080/swagger-ui.html#/employee-controller
     private final EmployeeService employeeService;
 
