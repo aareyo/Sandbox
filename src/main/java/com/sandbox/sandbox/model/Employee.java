@@ -1,6 +1,5 @@
 package com.sandbox.sandbox.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -24,8 +23,9 @@ public class Employee implements Serializable {
     private String lastName;
 
     @NotNull
-    @Column(name = "title")
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "jobdetails_")
+    private JobDetails jobDetails;
 
     public Long getId() {
         return id;
@@ -39,8 +39,8 @@ public class Employee implements Serializable {
         return lastName;
     }
 
-    public String getTitle() {
-        return this.title;
+    public JobDetails getJobDetails() {
+        return this.jobDetails;
     }
 
     public void setId(Long id) {
@@ -55,7 +55,7 @@ public class Employee implements Serializable {
         this.lastName = lastName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setJobDetails(JobDetails jobDetails) {
+        this.jobDetails = jobDetails;
     }
 }
